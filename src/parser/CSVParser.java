@@ -59,7 +59,7 @@ public class CSVParser implements DirectoryParser{
         fields.add(cur_field.toString());
         if(fields.size() > 4){
             //хз наверное если не ломает обработку то можно и не вызывать
-            //throw new IOException("Ожидалось 4 поля, а получено " + fields.size() + " [ " + line + " ] \n"); 
+            //throw new IOException("Ожидалось 4 поля, а получено " + fields.size() + " [ " + line + " ]"); 
         }
         if(fields.size() < 4){
             throw new IOException("Not enough args"); 
