@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <!-- Стандартные записи -->
+    <item city="Барнаул" street="Дальняя улица" house="56" floor="2" />
+    <item city="Братск" street="Большая Октябрьская улица" house="65" floor="5" />
+    <item city="Тест;город" street="Улица; с точкой с запятой" house="1А" floor="3" />
+    <item city="Тест" street="Улица &quot;Ромашка&quot;" house="2" floor="1" />
+
+    <!-- Дубликат стандартной записи -->
+    <item city="Барнаул" street="Дальняя улица" house="56" floor="2" />
+
+    <!-- Пустые значения -->
+    <item city="ПустаяУлица" street="" house="1" floor="2" />
+    <item city="ПустойДом" street="Улица" house="" floor="2" />
+    <item city="ПустойЭтаж" street="Улица" house="1" floor="" />
+
+    <!-- Лишний атрибут -->
+    <item city="ЛишнийАтрибут" street="Улица" house="1" floor="2" extra="мусор" note="ещё один" />
+
+    <!-- Не хватает floor -->
+    <item city="БезЭтажа" street="Улица" house="1" />
+
+    <!-- Не хватает city -->
+    <item street="Улица" house="2" floor="3" />
+
+    <!-- Этаж не число -->
+    <item city="ПлохойЭтаж" street="Улица" house="1" floor="abc" />
+
+    <!-- Совсем нет атрибутов -->
+    <item />
+</root>
