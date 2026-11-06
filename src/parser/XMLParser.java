@@ -42,7 +42,7 @@ public class XMLParser implements DirectoryParser {
             }
         }
         catch(XMLStreamException exception){
-            throw new IOException("Cannot parse XML");
+            throw new IOException("Cannot parse XML " + exception);
         }        
     }
 

@@ -41,7 +41,7 @@ public class CSVParser implements DirectoryParser{
         for(int i = 0; i < line.length(); i++){
             char symb = line.charAt(i);
             if (symb == '"'){
-                if((i+1) < line.length() && line.charAt(i+1) == '"'){
+                if(in_quotes &&(i+1) < line.length() && line.charAt(i+1) == '"'){
                     cur_field.append(symb);
                     i++;
                     continue;
