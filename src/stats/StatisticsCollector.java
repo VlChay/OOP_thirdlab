@@ -32,7 +32,7 @@ public class StatisticsCollector implements Consumer<CityRecord>{
 
         Map<String,int[]> floorsCopy = new HashMap<>();
         for(Map.Entry<String,int[]> entry : floorsByCity.entrySet()){
-            floorsCopy.put(entry.getKey(), entry.getValue()).clone();
+            floorsCopy.put(entry.getKey(), entry.getValue().clone());
         }
 
 
