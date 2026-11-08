@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 
 import parser.CityRecord;
 
-public class StatisticCollector implements Consumer<CityRecord>{
+public class StatisticsCollector implements Consumer<CityRecord>{
     private final Map<CityRecord,Integer> occurrecenes = new HashMap<>();
     private final Map<String,int[]> floorsByCity = new HashMap<>();
     @Override 
@@ -21,21 +21,21 @@ public class StatisticCollector implements Consumer<CityRecord>{
 
     }
 
-    public Statistic toStatistic(long millis){
-        Map<CityRecord,Integer> dublicates = new HashMap<>();
+    public Statistics toStatistic(long millis){
+        Map<CityRecord,Integer> duplicates = new HashMap<>();
 
         for(Map.Entry<CityRecord,Integer> entry: occurrecenes.entrySet()){
             if(entry.getValue() > 1){
-                dublicates.put(entry.getKey(), entry.getValue());
+                duplicates.put(entry.getKey(), entry.getValue());
             }
         }
 
         Map<String,int[]> floorsCopy = new HashMap<>();
         for(Map.Entry<String,int[]> entry : floorsByCity.entrySet()){
-            floorsCopy.put(entry.getKey(), entry.getValue());
+            floorsCopy.put(entry.getKey(), entry.getValue()).clone();
         }
 
 
-        return new Statistic(dublicates,floorsCopy,millis);
+        return new Statistics(duplicates,floorsCopy,millis);
     }
 }

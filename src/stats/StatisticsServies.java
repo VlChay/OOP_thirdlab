@@ -6,12 +6,12 @@ import java.nio.file.Path;
 import parser.DirectoryParser;
 import parser.ParserFactory;
 
-public class StatisticServies {
+public class StatisticsServies {
     private final ParserFactory parserFactory = new ParserFactory();
 
-    public Statistic process (Path path) throws IOException{
+    public Statistics process (Path path) throws IOException{
         DirectoryParser parser = parserFactory.getParser(path); 
-        StatisticCollector collector = new StatisticCollector();
+        StatisticsCollector collector = new StatisticsCollector();
 
         long start = System.currentTimeMillis();
         parser.parse(path, collector);
