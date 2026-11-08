@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <!-- Стандартные записи -->
+    <item city="Барнаул" street="Дальняя улица" house="56" floor="2" />
+    <item city="Братск" street="Большая Октябрьская улица" house="65" floor="5" />
+    <item city="Тест;город" street="Улица; с точкой с запятой" house="1А" floor="3" />
+    <item city="Тест" street="Улица &quot;Ромашка&quot;" house="2" floor="1" />
+    <item city="Барнаул" street="Дальняя улица" house="56" floor="2" />
+    <item city="Братск" street="Большая Октябрьская улица" house="65" floor="4" />
+    <item city="Тест;город" street="Улица; с точкой с запятой" house="1А" floor="3" />
+    <item city="Тест" street="Улица &quot;Ромашка&quot;" house="2" floor="1" />
+    <item city="Барнаул" street="Дальняя улица" house="56" floor="2" />
+    <item city="Братск" street="Большая Октябрьская улица" house="65" floor="5" />
+    <item city="Тест;город" street="Улица; с точкой с запятой" house="1А" floor="3" />
+    <item city="Тест" street="Улица &quot;Ромашка&quot;" house="2" floor="1" />
+    <item city="Барнаул" street="Дальняя улица" house="56" floor="2" />
+    <item city="Братск" street="Большая Октябрьская улица" house="65" floor="5" />
+    <item city="Тест;город" street="Улица; с точкой с запятой" house="1А" floor="3" />
+    <item city="Тест" street="Улица &quot;Ромашка&quot;" house="2" floor="1" />
+
+    <!-- Дубликат стандартной записи -->
+    <item city="Барнаул" street="Дальняя улица" house="56" floor="2" />
+
+    
+</root>
