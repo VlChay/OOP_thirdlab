@@ -117,7 +117,7 @@ public class ConsoleUI {
         System.out.println("Здания по этажам:");
         for (String city : cities) {
             int[] floors = floorsByCity.get(city);
-            System.out.printf("%s: 1-эт = %d, 2-эт = %d, 3-эт = %d, 4-эт = %d, 5-эт = %d%n",
+            System.out.printf("%s: 1-эт = %d | 2-эт = %d | 3-эт = %d | 4-эт = %d | 5-эт = %d |%n",
                     city,
                     floors[0],
                     floors[1],
