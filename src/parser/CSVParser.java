@@ -18,7 +18,8 @@ public class CSVParser implements DirectoryParser{
         return path.getFileName().toString().toLowerCase().endsWith(".csv");
     } 
     @Override
-    public void parse(Path path, Consumer<CityRecord> recordConsumer) throws IOException {
+    public int parse(Path path, Consumer<CityRecord> recordConsumer) throws IOException {
+        int skipped = 0;
         try(BufferedReader reader = Files.newBufferedReader(path,StandardCharsets.UTF_8)){
             reader.readLine();
             String line;
@@ -26,11 +27,14 @@ public class CSVParser implements DirectoryParser{
                 if(line.isBlank()){
                     continue;
                 }
-                
-                recordConsumer.accept(parseline(line));
+                try{
+                    recordConsumer.accept(parseline(line));
+                }catch(IOException e){
+                    skipped++;
+                }
             }
         }
-        
+        return skipped;
     }
     private CityRecord parseline(String line) throws IOException {
         //throw new UnsupportedOperationException("Unimplemented method 'parseline'");

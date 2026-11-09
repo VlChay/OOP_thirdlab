@@ -6,5 +6,5 @@ import java.util.function.Consumer;
 
 public interface DirectoryParser {
     boolean supports(Path path);
-    void parse (Path path, Consumer<CityRecord> recordConsumer) throws IOException;
+    int parse (Path path, Consumer<CityRecord> recordConsumer) throws IOException;
 }

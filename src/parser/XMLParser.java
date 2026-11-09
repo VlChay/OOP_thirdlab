@@ -22,7 +22,8 @@ public class XMLParser implements DirectoryParser {
     }
 
     @Override
-    public void parse(Path path, Consumer<CityRecord> recordConsumer) throws IOException {
+    public int parse(Path path, Consumer<CityRecord> recordConsumer) throws IOException {
+        int skipped = 0;
         XMLInputFactory factory = XMLInputFactory.newFactory();
         factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
         factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
@@ -33,7 +34,12 @@ public class XMLParser implements DirectoryParser {
                     int event = reader.next();
                     if(event == XMLStreamConstants.START_ELEMENT
                         && "item".equals(reader.getLocalName())){
-                            recordConsumer.accept(readItem(reader));
+                            try{
+                                recordConsumer.accept(readItem(reader));
+                            }
+                            catch(IOException e){
+                                skipped++;
+                            }
                         }
                 }
             }
@@ -43,7 +49,8 @@ public class XMLParser implements DirectoryParser {
         }
         catch(XMLStreamException exception){
             throw new IOException("Cannot parse XML " + exception);
-        }        
+        }   
+        return skipped;     
     }
 
     private CityRecord readItem(XMLStreamReader reader) throws IOException {

@@ -21,7 +21,7 @@ public class StatisticsCollector implements Consumer<CityRecord>{
 
     }
 
-    public Statistics toStatistic(long millis){
+    public Statistics toStatistic(long millis,int skipped){
         Map<CityRecord,Integer> duplicates = new HashMap<>();
 
         for(Map.Entry<CityRecord,Integer> entry: occurrecenes.entrySet()){
@@ -36,6 +36,6 @@ public class StatisticsCollector implements Consumer<CityRecord>{
         }
 
 
-        return new Statistics(duplicates,floorsCopy,millis);
+        return new Statistics(duplicates,floorsCopy,millis,skipped);
     }
 }

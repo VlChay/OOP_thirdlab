@@ -72,6 +72,8 @@ public class ConsoleUI {
         System.out.println();
         printTime(statistic);
         System.out.println();
+        printSkipped(statistic);
+        System.out.println();
     }
 
     private void printDuplicates(Statistics statistic) {
@@ -129,5 +131,8 @@ public class ConsoleUI {
 
     private void printTime(Statistics statistic) {
         System.out.printf("Время обработки: %d мс%n", statistic.millis());
+    }
+    private void printSkipped(Statistics statistic) {
+        System.out.printf("Пропущено строк при обработке: %d%n", statistic.skipped());
     }
 }

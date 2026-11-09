@@ -14,10 +14,10 @@ public class StatisticsServies {
         StatisticsCollector collector = new StatisticsCollector();
 
         long start = System.currentTimeMillis();
-        parser.parse(path, collector);
+        int skipped = parser.parse(path, collector);
         long end = System.currentTimeMillis() - start;
         
-        return collector.toStatistic(end);
+        return collector.toStatistic(end,skipped);
     }
     
 }
